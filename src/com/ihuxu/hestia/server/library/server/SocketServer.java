@@ -7,27 +7,27 @@ import java.net.Socket;
 import com.ihuxu.hestia.server.config.Common;
 
 public class SocketServer {
-	private ServerSocket ss;
+    private ServerSocket ss;
 
-	public void start() {
-		try {
-			ss = new ServerSocket(Common.serverPort);
-			while (true) {
-				Socket s = ss.accept();
-				try {
-					ClientThread clientThread = new ClientThread(s);
-					if(ClientThreadManager.addClientThread(clientThread.getClientKey(), clientThread)) {
-						clientThread.start();
-					} else {
-						clientThread.close();
-						clientThread = null;
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+    public void start() {
+        try {
+            ss = new ServerSocket(Common.serverPort);
+            while (true) {
+                Socket s = ss.accept();
+                try {
+                    ClientThread clientThread = new ClientThread(s);
+                    if(ClientThreadManager.addClientThread(clientThread.getClientKey(), clientThread)) {
+                        clientThread.start();
+                    } else {
+                        clientThread.close();
+                        clientThread = null;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
