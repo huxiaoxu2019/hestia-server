@@ -30,7 +30,7 @@ public class ServerCrontab {
             }
         };
         ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
-        service.scheduleAtFixedRate(runnable, Common.CRONTAB_INTERVAL, Common.CRONTAB_INTERVAL, TimeUnit.MILLISECONDS);
+        service.scheduleAtFixedRate(runnable, Common.SERVER_SOCKET_CRONTAB_INTERVAL, Common.SERVER_SOCKET_CRONTAB_INTERVAL, TimeUnit.MILLISECONDS);
     }
 
     public static boolean isClientSocketChecked() {
