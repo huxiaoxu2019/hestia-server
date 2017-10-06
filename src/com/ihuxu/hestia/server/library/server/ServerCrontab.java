@@ -21,8 +21,12 @@ public class ServerCrontab {
         }
         Runnable runnable = new Runnable() {
             public void run() {
-                System.out.println("ServerCrontab -> the client thread count is " + ClientThreadManager.getClientThreadsCount());
-                ClientThreadManager.cleanClientThreadsGarbage();
+                try {
+                    System.out.println("ServerCrontab -> the client thread count is " + ClientThreadManager.getClientThreadsCount());
+                    ClientThreadManager.cleanClientThreadsGarbage();
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
             }
         };
         ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();

@@ -3,6 +3,7 @@ package com.ihuxu.hestia.server.library.server;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Vector;
 
 public class ClientThreadManager {
 
@@ -38,17 +39,26 @@ public class ClientThreadManager {
 
     public static void cleanClientThreadsGarbage() {
         Iterator<Map.Entry<String, ClientThread>> iterator = ClientThreadManager.clientServerThreadHashMap.entrySet().iterator();
+        Vector<String> needRemoveClientKeys = new Vector<String>();
         while (iterator.hasNext()) {
             Map.Entry<String, ClientThread> entry = iterator.next();
             String key = entry.getKey();
             try {
-                if(ClientThreadManager.getClientThread(key).checkValid() == false) {
+                if (ClientThreadManager.getClientThread(key).checkValid() == false) {
                     System.out.println("trash client thread key:" + key);
                     ClientThreadManager.getClientThread(key).close();
-                    ClientThreadManager.removeClientThread(key);
+                    needRemoveClientKeys.add(key);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+            }
+        }
+        // DO MUST NOT to remove item from the HashMap out of the while block above,
+        // Because if do, you would get the exception of modifying the HashMap concurrently.
+        if (needRemoveClientKeys.size() > 0) {
+            Iterator<String> vectorIterator = needRemoveClientKeys.iterator();
+            while (vectorIterator.hasNext()) {
+                ClientThreadManager.removeClientThread(vectorIterator.next());
             }
         }
     }
