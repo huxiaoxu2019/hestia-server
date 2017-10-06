@@ -4,20 +4,21 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import com.ihuxu.hestia.server.config.Common;
+import com.ihuxu.hestia.server.config.CommonConfig;
+import com.ihuxu.hestia.server.library.crontab.CrontabHandler;
 
-public class SocketServer {
+public class ServerHandler {
     private ServerSocket ss;
 
     public void start() {
         try {
-        		ServerCrontab.checkClientSocket();
-            ss = new ServerSocket(Common.SERVER_SOCKET_PORT);
+            CrontabHandler.checkClientSocket();
+            ss = new ServerSocket(CommonConfig.SERVER_SOCKET_PORT);
             while (true) {
                 Socket s = ss.accept();
                 try {
-                    ClientThread clientThread = new ClientThread(s);
-                    if(ClientThreadManager.addClientThread(clientThread.getClientKey(), clientThread)) {
+                    ServerClientThread clientThread = new ServerClientThread(s);
+                    if(ServerClientThreadManager.addClientThread(clientThread.getClientKey(), clientThread)) {
                         clientThread.start();
                     } else {
                         clientThread.close();

@@ -7,14 +7,14 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
-public class ClientThread extends Thread {
+public class ServerClientThread extends Thread {
     private Socket socket;
     private String clientKey;
     private boolean listening = false;
     private BufferedReader br;
     private BufferedWriter bw;
 
-    public ClientThread(Socket socket) throws Exception {
+    public ServerClientThread(Socket socket) throws Exception {
         super();
         this.setClientKey(Long.toString(System.currentTimeMillis()));
         this.setSocket(socket);

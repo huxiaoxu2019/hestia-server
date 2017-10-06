@@ -1,6 +1,6 @@
 package com.ihuxu.hestia.server.model;
 
-public interface Message {
+public interface MessageModel {
 	// These are the message type constants(such as 1000), in which 
 	// the first char represents the platform(iOS, center server),
 	// the second char represents the message type, such as data info, controlling info,
