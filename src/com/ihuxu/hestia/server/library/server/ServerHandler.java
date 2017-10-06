@@ -8,14 +8,20 @@ import com.ihuxu.hestia.server.config.CommonConfig;
 import com.ihuxu.hestia.server.library.crontab.CrontabHandler;
 
 public class ServerHandler {
-    private ServerSocket ss;
+    private static ServerSocket ss;
+    private static boolean didRun = false;
 
-    public void start() {
+    public static void start() {
         try {
+            if (ServerHandler.didRun) {
+                throw new Exception("the ServerHandler.start() has been called before.");
+            } else {
+                ServerHandler.didRun = true;
+            }
             CrontabHandler.checkClientSocket();
-            ss = new ServerSocket(CommonConfig.SERVER_SOCKET_PORT);
+            ServerHandler.ss = new ServerSocket(CommonConfig.SERVER_SOCKET_PORT);
             while (true) {
-                Socket s = ss.accept();
+                Socket s = ServerHandler.ss.accept();
                 try {
                     ServerClientThread clientThread = new ServerClientThread(s);
                     if(ServerClientThreadManager.addClientThread(clientThread.getClientKey(), clientThread)) {
@@ -28,6 +34,8 @@ public class ServerHandler {
                 }
             }
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
