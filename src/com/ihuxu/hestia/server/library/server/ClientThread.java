@@ -8,7 +8,6 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 
 public class ClientThread extends Thread {
-
     private Socket socket;
     private String clientKey;
     private boolean listening = false;

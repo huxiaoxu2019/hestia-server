@@ -7,9 +7,9 @@ public interface Message {
 	// the next two chars represent the order.
 	public final int MESSAGE_TYPE_UNKNOWN = 0;
 	
-	// FROM iOS
+	/** FROM iOS **/
     public final int MESSAGE_TYPE_IOS_DATA_LOCATION = 1000;
     
-    // FROM CENTER SERVER
+    /** FROM CENTER SERVER **/
     public final int MESSAGE_TYPE_CSERVER_DATA_SOMEWHAT = 2000;
 }
