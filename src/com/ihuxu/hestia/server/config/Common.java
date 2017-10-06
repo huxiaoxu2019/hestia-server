@@ -1,7 +1,7 @@
 package com.ihuxu.hestia.server.config;
 
 public interface Common {
-    final public int serverPort = 1720;
+    public static final int SERVER_PORT = 1722;
     /**
      * The interval(milliseconds) of the server crontab.
      */

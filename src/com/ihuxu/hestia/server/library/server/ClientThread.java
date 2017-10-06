@@ -17,7 +17,7 @@ public class ClientThread extends Thread {
 
     public ClientThread(Socket socket) throws Exception {
         super();
-        this.setClientKey(Long.toString(System.currentTimeMillis()));
+        this.setClientKey(Long.toString(socket.hashCode()));
         this.setSocket(socket);
         this.setListening(true);
     }
@@ -29,7 +29,7 @@ public class ClientThread extends Thread {
                 String line = this.readLine();
                 System.out.println("new line:" + line);
                 if (line == null) {
-                    throw new Exception("Read new line error.");
+                    throw new Exception("Read new line error(maybe the client is disconnected).");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -54,15 +54,11 @@ public class ClientThread extends Thread {
         return this.bw;
     }
 
-    private Socket getSocket() {
-        return socket;
-    }
-
     private void setSocket(Socket socket) {
         this.socket = socket;
     }
 
-    public boolean isListening() {
+    private boolean isListening() {
         return listening;
     }
 
@@ -85,6 +81,19 @@ public class ClientThread extends Thread {
 
     public String getClientKey() throws Exception {
         return this.clientKey;
+    }
+
+    public boolean checkValid() {
+        if (this.isListening() == false) {
+            return false;
+        }
+        try {
+            socket.sendUrgentData(0xFF);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     public void close() {

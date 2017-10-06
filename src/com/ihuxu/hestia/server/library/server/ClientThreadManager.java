@@ -42,7 +42,7 @@ public class ClientThreadManager {
             Map.Entry<String, ClientThread> entry = iterator.next();
             String key = entry.getKey();
             try {
-                if(ClientThreadManager.getClientThread(key).isListening() == false) {
+                if(ClientThreadManager.getClientThread(key).checkValid() == false) {
                     System.out.println("trash client thread key:" + key);
                     ClientThreadManager.getClientThread(key).close();
                     ClientThreadManager.removeClientThread(key);

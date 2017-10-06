@@ -12,7 +12,7 @@ public class SocketServer {
     public void start() {
         try {
         		ServerCrontab.checkClientSocket();
-            ss = new ServerSocket(Common.serverPort);
+            ss = new ServerSocket(Common.SERVER_PORT);
             while (true) {
                 Socket s = ss.accept();
                 try {
@@ -21,7 +21,6 @@ public class SocketServer {
                         clientThread.start();
                     } else {
                         clientThread.close();
-                        clientThread = null;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
