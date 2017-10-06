@@ -11,6 +11,7 @@ public class SocketServer {
 
     public void start() {
         try {
+        		ServerCrontab.checkClientSocket();
             ss = new ServerSocket(Common.serverPort);
             while (true) {
                 Socket s = ss.accept();
