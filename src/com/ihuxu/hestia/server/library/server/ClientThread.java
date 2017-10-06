@@ -17,7 +17,7 @@ public class ClientThread extends Thread {
 
     public ClientThread(Socket socket) throws Exception {
         super();
-        this.setClientKey(Long.toString(socket.hashCode()));
+        this.setClientKey(Long.toString(System.currentTimeMillis()));
         this.setSocket(socket);
         this.setListening(true);
     }
@@ -88,7 +88,7 @@ public class ClientThread extends Thread {
             return false;
         }
         try {
-            socket.sendUrgentData(0xFF);
+            this.socket.sendUrgentData(0xFF);
         } catch (IOException e) {
             e.printStackTrace();
             return false;
