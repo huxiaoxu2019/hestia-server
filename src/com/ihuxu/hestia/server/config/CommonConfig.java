@@ -9,6 +9,6 @@ public interface CommonConfig {
 
     /** STRATEGY **/
     public static final String STRATEGY_MAP = "{"
-        + "'1000':['com.ihuxu.hestia.server.library.brain.LocationStrategy']"
+        + "'1000':['com.ihuxu.hestia.server.library.brain.BrainLocationStrategy']"
         + "}";
 }

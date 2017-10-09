@@ -1,11 +1,13 @@
 package com.ihuxu.hestia.server.library.brain;
 
 import java.util.LinkedList;
-import java.util.Queue;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.ihuxu.hestia.server.config.CommonConfig;
 import com.ihuxu.hestia.server.library.crontab.CrontabHandler;
+import com.ihuxu.hestia.server.model.CommonMessageModel;
 
 public class BrainHandler extends Thread {
     private static BrainHandler instance;
@@ -37,20 +39,35 @@ public class BrainHandler extends Thread {
         System.out.println("[BrainHandler]run -> starting...");
         while (true) {
             try {
-                if (BrainHandler.cmdQueue.size() < 1) {
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                if (BrainHandler.cmdQueue.size() <= 0) {
+                    Thread.sleep(100);
                     continue;
                 }
-                String cmdStr = BrainHandler.cmdQueue.pop();
-                JSONObject cmdJsonObjRoot = new JSONObject(cmdStr);
-                int messageType = cmdJsonObjRoot.getJSONObject("data").getInt("message_type");
+                CommonMessageModel cmm = new CommonMessageModel(BrainHandler.cmdQueue.pop());
+                int messageType = cmm.getMessageType();
+                JSONObject strategyJsonObjRoot = new JSONObject(CommonConfig.STRATEGY_MAP);
+                JSONArray currentStrategyJsonArr = strategyJsonObjRoot.getJSONArray(Integer.toString(messageType));
+                for (int i = 0; i < currentStrategyJsonArr.length(); ++i) {
+                    try {
+                        String strategyClassName = currentStrategyJsonArr.getString(i);
+                        BrainStrategy bs = BrainHandler.getInstance().getStrategy(strategyClassName);
+                        bs.execute(cmm);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    private BrainStrategy getStrategy(String className) {
+        switch (className) {
+            case "com.ihuxu.hestia.server.library.brain.BrainLocationStrategy":
+                return new com.ihuxu.hestia.server.library.brain.BrainLocationStrategy();
+            default:
+                return null;
         }
     }
 }
