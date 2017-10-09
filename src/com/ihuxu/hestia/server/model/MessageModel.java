@@ -22,4 +22,6 @@ public interface MessageModel {
     public String getErrorMessage();
 
     public JSONObject getCmd();
+    
+    public String getToken();
 }
