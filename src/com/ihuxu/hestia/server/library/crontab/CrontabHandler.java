@@ -21,6 +21,7 @@ public class CrontabHandler {
         Runnable runnable = new Runnable() {
             public void run() {
                 try {
+                    System.out.println("[CrontabHandler]checkBrainJob -> do nothing now");
                     // ...
                 } catch(Exception e) {
                     e.printStackTrace();
@@ -41,7 +42,7 @@ public class CrontabHandler {
         Runnable runnable = new Runnable() {
             public void run() {
                 try {
-                    System.out.println("ServerCrontab -> the client thread count is " + ServerClientThreadManager.getClientThreadsCount());
+                    System.out.println("[CrontabHandler]checkClientSocket -> the client thread count is " + ServerClientThreadManager.getClientThreadsCount());
                     ServerClientThreadManager.cleanClientThreadsGarbage();
                 } catch(Exception e) {
                     e.printStackTrace();

@@ -7,26 +7,30 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
+import com.ihuxu.hestia.server.library.brain.BrainHandler;
+
 public class ServerClientThread extends Thread {
     private Socket socket;
     private String clientKey;
     private boolean listening = false;
     private BufferedReader br;
     private BufferedWriter bw;
+    private BrainHandler bh;
 
     public ServerClientThread(Socket socket) throws Exception {
         super();
         this.setClientKey(Long.toString(System.currentTimeMillis()));
         this.setSocket(socket);
         this.setListening(true);
+        this.bh = BrainHandler.getInstance();
     }
 
     public void run() {
-        System.out.println("client server thread running...");
+        System.out.println("[ServerClientThread]One new client connected");
         while(this.isListening()) {
             try {
                 String line = this.readLine();
-                System.out.println("new line:" + line);
+                this.bh.pushBackCmd(line);
                 if (line == null) {
                     throw new Exception("Read new line error(maybe the client is disconnected).");
                 }
