@@ -7,6 +7,5 @@ public class BrainLocationStrategy extends BrainStrategy {
     public void execute(CommonMessageModel cmm) {
         System.out.println("[BrainLocationStrategy]execute -> dispose the cmd:" + cmm.getCmd().toString());
         LocationMessageModel lmm = new LocationMessageModel(cmm.getCmd());
-
     }
 }

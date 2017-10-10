@@ -13,7 +13,7 @@ public interface CommonConfig {
         + "}";
 
     /** INSTAPUSH **/
-    public static String INSTAPUSH_TOKEN = "59dc40faa4c48af325d2736a";
-    public static String INSTAPUSH_APP_ID = "59dc41d4a4c48aab18d2736a";
-    public static String INSTAPUSH_APP_SECRET = "291dc31cbf557a057cb9eb386e52d521";
+    public static String INSTAPUSH_TOKEN = "abc";
+    public static String INSTAPUSH_APP_ID = "abc";
+    public static String INSTAPUSH_APP_SECRET = "abc";
 }
