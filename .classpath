@@ -2,7 +2,16 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/org.json.simple-0.3-incubating-sources.jar"/>
 	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/org.json-20130603.jar" sourcepath="/Users/GenialX/Documents/Workspace/Private/Java/Library/org.json.simple-0.3-incubating-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/httpclient/httpclient-win-4.5.3.jar"/>
+	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/httpclient/httpclient-cache-4.5.3.jar"/>
+	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/httpclient/fluent-hc-4.5.3.jar"/>
+	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/httpclient/httpmime-4.5.3.jar"/>
+	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/httpclient/httpclient-4.5.3.jar"/>
+	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/httpclient/httpcore-4.4.6.jar"/>
+	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/httpclient/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/httpclient/jna-4.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/httpclient/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="/Users/GenialX/Documents/Workspace/Private/Java/Library/httpclient/commons-logging-1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

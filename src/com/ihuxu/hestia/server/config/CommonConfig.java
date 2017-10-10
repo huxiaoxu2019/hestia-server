@@ -13,7 +13,10 @@ public interface CommonConfig {
         + "}";
 
     /** INSTAPUSH **/
-    public static String INSTAPUSH_TOKEN = "abc";
-    public static String INSTAPUSH_APP_ID = "abc";
-    public static String INSTAPUSH_APP_SECRET = "abc";
+    public static String INSTAPUSH_TOKEN = "123456789";
+    public static String INSTAPUSH_APP_ID = "123456789";
+    public static String INSTAPUSH_APP_SECRET = "123456789";
+
+    /** BAIDU MAP **/
+    public static String BAIDU_MAP_AK = "123456789";
 }
