@@ -1,9 +1,22 @@
 package com.ihuxu.hestia.server.model;
 
+import org.json.JSONObject;
+
 public class LocationMessageModel extends CommonMessageModel {
 
-	public LocationMessageModel(String cmd) {
-		super(cmd);
-	}
+    public LocationMessageModel(JSONObject cmd) {
+        super(cmd);
+    }
 
+    public LocationMessageModel(String cmd) {
+        super(cmd);
+    }
+
+    public double getLat() {
+        return this.cmd.getJSONObject("data").getDouble("lat");
+    }
+
+    public double getLon() {
+        return this.cmd.getJSONObject("data").getDouble("lon");
+    }
 }

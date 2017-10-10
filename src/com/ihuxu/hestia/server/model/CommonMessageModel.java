@@ -3,11 +3,11 @@ package com.ihuxu.hestia.server.model;
 import org.json.JSONObject;
 
 public class CommonMessageModel implements MessageModel {
-    private JSONObject cmd; 
+    protected JSONObject cmd;
 
     /**
      * Constructor.
-     *  
+     *
      * @param cmd {"errno":0,"errmsg}":"successfully","data":{"message_type":1000,"token":"aaabbbccc"}}
      */
     public CommonMessageModel(String cmd) {
