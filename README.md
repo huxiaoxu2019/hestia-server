@@ -18,5 +18,6 @@ The hestia-server's Brain Part consists of several strategy classes which are in
 ### BrainLocationStrategy 
 
 - Send your current location info to the app via Instapush
+
 ![brain location strategy demo 1](https://docs.google.com/drawings/d/e/2PACX-1vTKq8OaYaBxn_2lj5TBKrtGyf_DX_aiZKESypFWz_cAFTbHzrMT8XZHxDiC-WrPJKbVd6ZF5DGEQ9ri/pub?w=392&h=693)
 ![brain location strategy demo 2](https://docs.google.com/drawings/d/e/2PACX-1vQGbogrYSOcAQJR0Cg1CZptV9hgJtn0W4JirzzCNcvjgks2-_QUMinGmYzOOU4wZTjIr15DrY61PBhj/pub?w=396&h=689)
