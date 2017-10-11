@@ -2,6 +2,9 @@
 
 In Ancient Greek religion, Hestia (/ˈhɛstiə/; Greek: Ἑστία, "hearth" or "fireside") is a virgin goddess of the hearth, architecture, and the right ordering of domesticity, the family, the home, and the state.
 
+So, Hestia is the project which controlls the devices in home smartly. Additionally, It also supports some extended functionality which is described in the [Feature (Brain Part)](#feature-brain-part).
+
+## Hestia Server
 This is the server, based Java language, for listening to clients, disposing the data (<b>Brain Part</b>), controlling the home device, responsing infomation and so on.
 
 ![hestia server structure](https://docs.google.com/drawings/d/e/2PACX-1vSCb37rXZ-ngSvVRu3TqxvlO3cdOPEyslglEa-SK8WoeEmHpSSwC1bdy0W4ido_F_uG5PBejP_WOp7G/pub?w=961&h=282)
