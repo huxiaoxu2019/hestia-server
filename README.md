@@ -12,7 +12,7 @@ This is the server, based Java language, for listening to clients, disposing the
 
 ## Client
 
-[Hesita iOS](https://github.com/GenialX/hestia-ios)
+[Hestia iOS](https://github.com/GenialX/hestia-ios)
 
 ## Feature (Brain Part)
 
