@@ -6,13 +6,13 @@ import com.ihuxu.hestia.server.config.CommonConfig;
 
 public class InstapushHandler {
 
-    public static void sendInstapushMessage(String message) {
+    public static void sendWithlocationNoticeEvent(String formattedAddress) {
         InstapushHandler.executeScript(
                 "curl -X POST  "
                 + "-H \"x-instapush-appid: " + CommonConfig.INSTAPUSH_APP_ID + "\" "
                 + "-H \"x-instapush-appsecret: " + CommonConfig.INSTAPUSH_APP_SECRET + "\" "
                 + "-H \"Content-Type: application/json\" "
-                + "-d '{\"event\":\"location_notice\",\"trackers\":{\"message\":\"" + message + "\"}}' "
+                + "-d '{\"event\":\"location_notice\",\"trackers\":{\"formatted_address\":\"" + formattedAddress + "\"}}' "
                 + "https://api.instapush.im/v1/post"
                 );
     }

@@ -1,4 +1,5 @@
 package com.ihuxu.hestia.server.controller; 
+import com.ihuxu.hestia.server.library.instapush.InstapushHandler;
 import com.ihuxu.hestia.server.library.map.MapHandler;
 
 public class TestController {

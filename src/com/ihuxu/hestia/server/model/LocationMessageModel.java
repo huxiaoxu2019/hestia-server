@@ -16,7 +16,7 @@ public class LocationMessageModel extends CommonMessageModel {
         return this.cmd.getJSONObject("data").getDouble("lat");
     }
 
-    public double getLon() {
-        return this.cmd.getJSONObject("data").getDouble("lon");
+    public double getLnt() {
+        return this.cmd.getJSONObject("data").getDouble("lnt");
     }
 }
