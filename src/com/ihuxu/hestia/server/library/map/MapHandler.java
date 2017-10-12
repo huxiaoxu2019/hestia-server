@@ -19,7 +19,8 @@ import com.ihuxu.hestia.server.config.CommonConfig;
 
 @SuppressWarnings("deprecation")
 public class MapHandler {
-    private static String post(String url, List<NameValuePair> nameValuePair) throws IOException {
+    @SuppressWarnings("unused")
+	private static String post(String url, List<NameValuePair> nameValuePair) throws IOException {
         String body = "{}";
         @SuppressWarnings("resource")
         DefaultHttpClient httpclient = new DefaultHttpClient();

@@ -17,7 +17,6 @@ public class InstapushHandler {
                 );
     }
 
-    @SuppressWarnings("unused")
     private static void executeScript(String... commands) {
         File tempScript = null;
         try {
