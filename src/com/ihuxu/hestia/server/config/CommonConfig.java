@@ -6,6 +6,7 @@ public interface CommonConfig {
     public static final int SERVER_CRONTAB_CHECK_CLIENT_SOCKET_INTERVAL = 3000;
     public static final int SERVER_CRONTB_BRAIN_JOB_INTERVAL = 3000;
     public static final String SERVER_IDENTITY_TOKEN = "aaabbbccc";
+    public static final String SERVER_RPI_CLIENT_KEY = "raspberry_pi_client_key";
 
     /** STRATEGY **/
     public static final String STRATEGY_MAP = "{"

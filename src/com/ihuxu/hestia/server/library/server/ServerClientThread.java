@@ -73,8 +73,7 @@ public class ServerClientThread extends Thread {
         return this.getReader().readLine();
     }
 
-    @SuppressWarnings("unused")
-	private void writeLine(String line) throws IOException {
+	public void writeLine(String line) throws IOException {
         this.getWriter().write(line);
         this.getWriter().newLine();
     }
