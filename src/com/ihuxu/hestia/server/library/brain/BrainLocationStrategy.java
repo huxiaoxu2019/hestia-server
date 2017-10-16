@@ -40,8 +40,12 @@ public class BrainLocationStrategy extends BrainStrategy {
         } else {
             return;
         }
-        String currentLocation = MapHandler.geocoder(lmm.getLnt(), lmm.getLat())
-            .getJSONObject("result").getString("formatted_address");
-        InstapushHandler.sendWithlocationNoticeEvent(currentLocation);
+        try {
+            String currentLocation = MapHandler.geocoder(lmm.getLnt(), lmm.getLat())
+                .getJSONObject("result").getString("formatted_address");
+            InstapushHandler.sendWithlocationNoticeEvent(currentLocation);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
