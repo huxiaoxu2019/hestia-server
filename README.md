@@ -4,6 +4,8 @@ In Ancient Greek religion, Hestia (/ˈhɛstiə/; Greek: Ἑστία, "hearth" or
 
 So, Hestia is the project which controlls the devices in home smartly. Additionally, It also supports some extended functionality which is described in the [Feature (Brain Part)](#feature-brain-part).
 
+![hestia structure](https://docs.google.com/drawings/d/e/2PACX-1vT8G32e2AJbFTea1f_9dLB_ZKbS85kUqXnLZNPJ8lp0TAohMYc4bMiz-4qDYa-DdlcfmkpeNlxP81B6/pub?w=724&h=306)
+
 ## Hestia Server
 This is the server, based Java language, for listening to clients, disposing the data (<b>Brain Part</b>), controlling the home device, responsing infomation and so on.
 
