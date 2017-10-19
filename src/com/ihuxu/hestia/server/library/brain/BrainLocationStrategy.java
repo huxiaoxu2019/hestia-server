@@ -10,7 +10,7 @@ import com.ihuxu.hestia.server.model.LocationMessageModel;
 
 public class BrainLocationStrategy extends BrainStrategy {
     private static final int PUSH_NOTIFICATION_TO_IOS_INTERVAL = 60; // 60 seconds
-    private long lastPushNotificationToIosTime;
+    private static long lastPushNotificationToIosTime;
     private LocationMessageModel lmm;
 
     public void execute(CommonMessageModel cmm) {
@@ -35,8 +35,8 @@ public class BrainLocationStrategy extends BrainStrategy {
     }
 
     private void sendNotificationToIos() {
-        if (System.currentTimeMillis() - this.lastPushNotificationToIosTime > BrainLocationStrategy.PUSH_NOTIFICATION_TO_IOS_INTERVAL * 1000) {
-            this.lastPushNotificationToIosTime = System.currentTimeMillis();
+        if (System.currentTimeMillis() - BrainLocationStrategy.lastPushNotificationToIosTime > BrainLocationStrategy.PUSH_NOTIFICATION_TO_IOS_INTERVAL * 1000) {
+            BrainLocationStrategy.lastPushNotificationToIosTime = System.currentTimeMillis();
         } else {
             return;
         }
