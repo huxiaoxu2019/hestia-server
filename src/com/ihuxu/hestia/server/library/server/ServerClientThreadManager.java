@@ -37,6 +37,18 @@ public class ServerClientThreadManager {
         return ServerClientThreadManager.clientServerThreadHashMap.size();
     }
 
+    public static boolean changeClientKey(String originalKey, String newKey) {
+        try {
+
+            ServerClientThreadManager.getClientThread(originalKey).setClientKey(originalKey);
+            ServerClientThreadManager.addClientThread(newKey, ServerClientThreadManager.getClientThread(originalKey));
+            ServerClientThreadManager.removeClientThread(originalKey);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
     public static void cleanClientThreadsGarbage() {
         Iterator<Map.Entry<String, ServerClientThread>> iterator = ServerClientThreadManager.clientServerThreadHashMap.entrySet().iterator();
         Vector<String> needRemoveClientKeys = new Vector<String>();

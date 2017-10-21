@@ -11,6 +11,7 @@ import com.ihuxu.hestia.server.library.brain.BrainHandler;
 
 public class ServerClientThread extends Thread {
     private Socket socket;
+    private String clientId;
     private String clientKey;
     private boolean listening = false;
     private BufferedReader br;
@@ -20,6 +21,7 @@ public class ServerClientThread extends Thread {
     public ServerClientThread(Socket socket) throws Exception {
         super();
         this.setClientKey(Long.toString(System.currentTimeMillis()));
+        this.setClientId(this.getClientKey());
         this.setSocket(socket);
         this.setListening(true);
         this.bh = BrainHandler.getInstance();
@@ -30,7 +32,7 @@ public class ServerClientThread extends Thread {
         while(this.isListening()) {
             try {
                 String line = this.readLine();
-                this.bh.pushBackCmd(line);
+                this.bh.pushBackCmd(this.getClientId(), line);
                 if (line == null) {
                     throw new Exception("Read new line error(maybe the client is disconnected).");
                 }
@@ -78,7 +80,7 @@ public class ServerClientThread extends Thread {
         this.getWriter().newLine();
     }
 
-    private void setClientKey(String clientKey) {
+    public void setClientKey(String clientKey) {
         this.clientKey = clientKey;
     }
 
@@ -117,4 +119,12 @@ public class ServerClientThread extends Thread {
             e.printStackTrace();
         }
     }
+
+	public String getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(String clientId) {
+		this.clientId = clientId;
+	}
 }
