@@ -8,7 +8,7 @@ public class DeviceInfoMessageModel extends CommonMessageModel {
     /**
      * Constructor.
      * 
-     * @param cmd {"errno":0,"errmsg}":"successfully","data":{"client_key":"client_key_str","token":"aaabbbccc"}}
+     * @param cmd {"errno":0,"errmsg":"successfully","data":{"message_type":3000,"client_key":"client_key_str","token":"aaabbbccc"}}
      */
     public DeviceInfoMessageModel(JSONObject cmd) {
         super(cmd);

@@ -33,8 +33,8 @@ public class BrainHandler extends Thread {
 
     public void pushBackCmd(String clientId, String cmd) {
         LinkedList<String> ll = new LinkedList<String>();
-        ll.set(BrainHandler.INDEX_CLIENT_ID, clientId);
-        ll.set(BrainHandler.INDEX_CMD, cmd);
+        ll.add(BrainHandler.INDEX_CLIENT_ID, clientId);
+        ll.add(BrainHandler.INDEX_CMD, cmd);
         BrainHandler.cmdQueue.add(ll);
     }
 
@@ -74,6 +74,8 @@ public class BrainHandler extends Thread {
         switch (className) {
             case "com.ihuxu.hestia.server.library.brain.BrainLocationStrategy":
                 return new com.ihuxu.hestia.server.library.brain.BrainLocationStrategy();
+            case "com.ihuxu.hestia.server.library.brain.BrainDeviceInfoStrategy":
+                return new com.ihuxu.hestia.server.library.brain.BrainDeviceInfoStrategy();
             default:
                 return null;
         }

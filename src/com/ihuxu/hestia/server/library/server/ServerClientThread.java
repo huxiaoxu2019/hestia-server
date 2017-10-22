@@ -76,8 +76,8 @@ public class ServerClientThread extends Thread {
     }
 
 	public void writeLine(String line) throws IOException {
-        this.getWriter().write(line);
-        this.getWriter().newLine();
+        this.getWriter().write(line + '\n');
+        this.getWriter().flush();
     }
 
     public void setClientKey(String clientKey) {
