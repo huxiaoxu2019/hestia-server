@@ -10,10 +10,14 @@ public interface MessageModel {
     public final int MESSAGE_TYPE_UNKNOWN = 0;
 
     /** FROM iOS **/
-    public final int MESSAGE_TYPE_IOS_DATA_LOCATION = 1000;
+    public final int MESSAGE_TYPE_IOS_DATA_LOCATION    = 1000;
+    public final int MESSAGE_TYPE_IOS_DATA_DEVICE_INFO = 1001;
 
     /** FROM CENTER SERVER **/
     public final int MESSAGE_TYPE_CSERVER_DATA_SOMEWHAT = 2000;
+
+    /** FROM RPi **/
+    public final int MESSAGE_TYPE_RPI_DATA_DEVICE_INFO = 3000;
 
     public int getMessageType();
 
@@ -22,6 +26,6 @@ public interface MessageModel {
     public String getErrorMessage();
 
     public JSONObject getCmd();
-    
+
     public String getToken();
 }

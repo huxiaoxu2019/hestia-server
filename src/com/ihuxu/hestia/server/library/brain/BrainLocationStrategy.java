@@ -13,7 +13,14 @@ public class BrainLocationStrategy extends BrainStrategy {
     private static long lastPushNotificationToIosTime;
     private LocationMessageModel lmm;
 
-    public void execute(CommonMessageModel cmm) {
+    /**
+	 * @deprecated Use {@link #execute(String,CommonMessageModel)} instead
+	 */
+	public void execute(CommonMessageModel cmm) {
+		execute(null, cmm);
+	}
+
+	public void execute(String clientId, CommonMessageModel cmm) {
         System.out.println("[BrainLocationStrategy]execute -> dispose the cmd:" + cmm.getCmd().toString());
         this.lmm = new LocationMessageModel(cmm.getCmd());
 

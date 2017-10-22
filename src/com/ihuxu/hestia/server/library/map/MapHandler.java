@@ -27,7 +27,7 @@ public class MapHandler {
         try {
             HttpPost httpost = new HttpPost(url);
             httpost.setEntity(new UrlEncodedFormEntity(nameValuePair, StandardCharsets.UTF_8));
-            HttpResponse response = httpclient.execute(httpost);
+            HttpResponse response = httpclient.execute(null, httpost);
             HttpEntity entity = response.getEntity();
             body = EntityUtils.toString(entity);
         } finally {
@@ -42,7 +42,7 @@ public class MapHandler {
         DefaultHttpClient httpclient = new DefaultHttpClient();
         try {
             HttpGet httpget = new HttpGet(url);
-            HttpResponse response = httpclient.execute(httpget);
+            HttpResponse response = httpclient.execute(null, httpget);
             HttpEntity entity = response.getEntity();
             body = EntityUtils.toString(entity);
         } finally {
