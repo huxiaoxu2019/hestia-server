@@ -12,9 +12,10 @@ This is the server, based Java language, for listening to clients, disposing the
 ![hestia server structure](https://docs.google.com/drawings/d/e/2PACX-1vSCb37rXZ-ngSvVRu3TqxvlO3cdOPEyslglEa-SK8WoeEmHpSSwC1bdy0W4ido_F_uG5PBejP_WOp7G/pub?w=961&h=282)
 
 
-## Client
+## Other Clients
 
 [Hestia iOS](https://github.com/GenialX/hestia-ios)
+[Hestia Raspberry Pi](https://github.com/GenialX/hestia-rpi)
 
 ## Feature (Brain Part)
 
