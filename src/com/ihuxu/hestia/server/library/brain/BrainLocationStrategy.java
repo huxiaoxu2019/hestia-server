@@ -35,7 +35,7 @@ public class BrainLocationStrategy extends BrainStrategy {
         ServerClientThread sct;
         try {
             sct = ServerClientThreadManager.getClientThread(CommonConfig.SERVER_RPI_CLIENT_KEY);
-            sct.writeLine(lmm.getCmd().toString());
+            sct.writeLine(lmm.getCmd().toString().replaceAll("\n", ""));
         } catch (Exception e) {
             e.printStackTrace();
         }
