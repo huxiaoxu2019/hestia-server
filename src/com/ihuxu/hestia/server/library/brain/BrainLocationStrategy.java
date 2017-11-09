@@ -1,5 +1,7 @@
 package com.ihuxu.hestia.server.library.brain;
 
+import org.json.JSONObject;
+
 import com.ihuxu.hestia.server.config.CommonConfig;
 import com.ihuxu.hestia.server.library.instapush.InstapushHandler;
 import com.ihuxu.hestia.server.library.map.MapHandler;
@@ -48,8 +50,9 @@ public class BrainLocationStrategy extends BrainStrategy {
             return;
         }
         try {
-            String currentLocation = MapHandler.geocoder(lmm.getLnt(), lmm.getLat())
-                .getJSONObject("result").getString("formatted_address");
+        		JSONObject result = MapHandler.geocoder(lmm.getLnt(), lmm.getLat()).getJSONObject("result"); 
+            String currentLocation = result.getString("formatted_address") + " " + result.getString("sematic_description");
+            System.out.println("[BrainLocationStrategy]sendNotificationToIos -> address:" + currentLocation);
             InstapushHandler.sendWithlocationNoticeEvent(currentLocation);
         } catch (Exception e) {
             e.printStackTrace();
