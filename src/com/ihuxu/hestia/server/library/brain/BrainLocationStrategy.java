@@ -38,6 +38,7 @@ public class BrainLocationStrategy extends BrainStrategy {
         try {
             sct = ServerClientThreadManager.getClientThread(CommonConfig.SERVER_RPI_CLIENT_KEY);
             sct.writeLine(lmm.getCmd().toString().replaceAll("\n", ""));
+            System.out.println("[BrainLocationStrategy]execute -> send cmd to Rpi:" + CommonConfig.SERVER_RPI_CLIENT_KEY);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -53,7 +54,8 @@ public class BrainLocationStrategy extends BrainStrategy {
             JSONObject result = MapHandler.geocoder(lmm.getLnt(), lmm.getLat()).getJSONObject("result");
             String currentLocation = result.getString("formatted_address") + " " + result.getString("sematic_description");
             System.out.println("[BrainLocationStrategy]sendNotificationToIos -> address:" + currentLocation);
-            InstapushHandler.sendWithlocationNoticeEvent(currentLocation);
+            // The service is down...
+            //InstapushHandler.sendWithlocationNoticeEvent(currentLocation);
         } catch (Exception e) {
             e.printStackTrace();
         }
