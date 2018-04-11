@@ -52,7 +52,7 @@ public class MapHandler {
     }
 
     public static JSONObject geocoder(double lnt, double lat) {
-        String url = "http://api.map.baidu.com/geocoder/v2/?coordtype=wgs84ll&location=" + lnt + "," + lat + "&output=json&pois=1&ak=" + CommonConfig.BAIDU_MAP_AK;
+        String url = "http://api.map.baidu.com/geocoder/v2/?coordtype=wgs84ll&location=" + lat + "," + lnt + "&output=json&pois=1&ak=" + CommonConfig.BAIDU_MAP_AK;
         try {
             return new JSONObject(MapHandler.get(url));
         } catch (IOException e) {
