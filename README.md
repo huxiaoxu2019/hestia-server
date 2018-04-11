@@ -14,7 +14,9 @@ This is the server, based Java language, for listening to clients, disposing the
 
 ## Other Clients
 
-[Hestia iOS](https://github.com/GenialX/hestia-ios)
+[Hestia Android](https://github.com/GenialX/hestia-android)
+
+[Hestia iOS(not maintained)](https://github.com/GenialX/hestia-ios)
 
 [Hestia Raspberry Pi](https://github.com/GenialX/hestia-rpi)
 
