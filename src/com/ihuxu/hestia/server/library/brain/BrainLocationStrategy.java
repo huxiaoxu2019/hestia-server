@@ -23,7 +23,7 @@ public class BrainLocationStrategy extends BrainStrategy {
 	}
 
 	public void execute(String clientId, CommonMessageModel cmm) {
-        System.out.println("[BrainLocationStrategy]execute -> dispose the cmd:" + cmm.getCmd().toString());
+        System.out.println("[BrainLocationStrategy]execute -> dispose the cmd:" + cmm.getCmd().toString() + " client_id:" + clientId);
         this.lmm = new LocationMessageModel(cmm.getCmd());
 
         // send notification to iOS
@@ -50,7 +50,7 @@ public class BrainLocationStrategy extends BrainStrategy {
             return;
         }
         try {
-        		JSONObject result = MapHandler.geocoder(lmm.getLnt(), lmm.getLat()).getJSONObject("result"); 
+            JSONObject result = MapHandler.geocoder(lmm.getLnt(), lmm.getLat()).getJSONObject("result");
             String currentLocation = result.getString("formatted_address") + " " + result.getString("sematic_description");
             System.out.println("[BrainLocationStrategy]sendNotificationToIos -> address:" + currentLocation);
             InstapushHandler.sendWithlocationNoticeEvent(currentLocation);
