@@ -26,11 +26,24 @@ public class BrainLocationStrategy extends BrainStrategy {
         System.out.println("[BrainLocationStrategy]execute -> dispose the cmd:" + cmm.getCmd().toString() + " client_id:" + clientId);
         this.lmm = new LocationMessageModel(cmm.getCmd());
 
+        // filter
+        if (this.filter()) {
+            System.out.println("[BrainLocationStrategy]execute -> hit filter");
+            return;
+        }
+
         // send notification to iOS
         this.sendNotificationToIos();
 
         // redirect this message to RPi
         this.redirectThisMessageToRpi();
+    }
+
+    private boolean filter() {
+        if (this.lmm.getLat() == 0 || this.lmm.getLnt() == 0) {
+            return true;
+        }
+        return false;
     }
 
     private void redirectThisMessageToRpi() {
