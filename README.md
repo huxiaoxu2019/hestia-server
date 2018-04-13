@@ -26,12 +26,9 @@ The hestia-server's Brain Part consists of several strategy classes which are in
 
 ### BrainLocationStrategy
 
-- Send your current location notification which is from your iPhone's GPS via [Instapush](https://instapush.im)
+- Send your current location which is from your Mobile Device to the Hestia Server
 
-![brain location strategy demo 2](https://docs.google.com/drawings/d/e/2PACX-1vQGbogrYSOcAQJR0Cg1CZptV9hgJtn0W4JirzzCNcvjgks2-_QUMinGmYzOOU4wZTjIr15DrY61PBhj/pub?w=396&h=689)
-![brain location strategy demo 1](https://docs.google.com/drawings/d/e/2PACX-1vTKq8OaYaBxn_2lj5TBKrtGyf_DX_aiZKESypFWz_cAFTbHzrMT8XZHxDiC-WrPJKbVd6ZF5DGEQ9ri/pub?w=392&h=693)
-
-- Trigger BACK HOME and LEAVE HOME event according the location from the device(iPhone)
+- Trigger BACK HOME and LEAVE HOME event according the location from the mobile device
   - BACK HOME
     when back home, it would turn on the light according to some factors, such the brightness in the room, the switch status of the yeelight
   - LEAVE HOME
