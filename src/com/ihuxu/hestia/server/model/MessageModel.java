@@ -11,7 +11,7 @@ public interface MessageModel {
 
     /** FROM iOS **/
     public final int MESSAGE_TYPE_IOS_DATA_LOCATION    = 1000;
-    public final int MESSAGE_TYPE_IOS_DATA_DEVICE_INFO = 1001;
+    public final int MESSAGE_TYPE_MOBILE_REQUEST_DEVICE_INFO = 1001;
 
     /** FROM CENTER SERVER **/
     public final int MESSAGE_TYPE_CSERVER_DATA_SOMEWHAT = 2000;

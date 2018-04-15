@@ -10,8 +10,9 @@ public interface CommonConfig {
 
     /** STRATEGY **/
     public static final String STRATEGY_MAP = "{"
-        + "'1000':['com.ihuxu.hestia.server.library.brain.BrainLocationStrategy']"
-        + "'3000':['com.ihuxu.hestia.server.library.brain.BrainDeviceInfoStrategy']"
+        + "'1000':['com.ihuxu.hestia.server.library.brain.BrainLocationStrategy'],"
+        + "'1100':['com.ihuxu.hestia.server.library.brain.BrainMobileRequestHomeDeviceInfoStrategy'],"
+        + "'3000':['com.ihuxu.hestia.server.library.brain.BrainDeviceInfoStrategy'],"
         + "'3001':['com.ihuxu.hestia.server.library.brain.BrainHomeDeviceInfoStrategy']"
         + "}";
 
