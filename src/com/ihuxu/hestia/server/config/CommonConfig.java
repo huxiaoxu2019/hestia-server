@@ -7,11 +7,16 @@ public interface CommonConfig {
     public static final int SERVER_CRONTB_BRAIN_JOB_INTERVAL = 3000;
     public static final String SERVER_IDENTITY_TOKEN = "aaabbbccc";
     public static final String SERVER_RPI_CLIENT_KEY = "raspberry_pi_client_key";
+    public static final String SERVER_MOBILE_CLIENT_KEY = "mobile_client_key";
 
     /** STRATEGY **/
     public static final String STRATEGY_MAP = "{"
+        // From Mobile
         + "'1000':['com.ihuxu.hestia.server.library.brain.BrainLocationStrategy'],"
+        + "'1001':['com.ihuxu.hestia.server.library.brain.BrainMobileDataDeviceInfoStrategy'],"
         + "'1100':['com.ihuxu.hestia.server.library.brain.BrainMobileRequestHomeDeviceInfoStrategy'],"
+
+        // From RPi
         + "'3000':['com.ihuxu.hestia.server.library.brain.BrainDeviceInfoStrategy'],"
         + "'3001':['com.ihuxu.hestia.server.library.brain.BrainHomeDeviceInfoStrategy']"
         + "}";

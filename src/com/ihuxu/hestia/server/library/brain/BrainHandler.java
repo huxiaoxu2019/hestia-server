@@ -72,10 +72,15 @@ public class BrainHandler extends Thread {
 
     private BrainStrategy getStrategy(String className) {
         switch (className) {
+            // From Mobile
             case "com.ihuxu.hestia.server.library.brain.BrainLocationStrategy":
                 return new com.ihuxu.hestia.server.library.brain.BrainLocationStrategy();
             case "com.ihuxu.hestia.server.library.brain.BrainMobileRequestHomeDeviceInfoStrategy":
                 return new com.ihuxu.hestia.server.library.brain.BrainMobileRequestHomeDeviceInfoStrategy();
+            case "com.ihuxu.hestia.server.library.brain.BrainMobileDataDeviceInfoStrategy":
+                return new com.ihuxu.hestia.server.library.brain.BrainMobileDataDeviceInfoStrategy();
+
+            // From RPi
             case "com.ihuxu.hestia.server.library.brain.BrainDeviceInfoStrategy":
                 return new com.ihuxu.hestia.server.library.brain.BrainDeviceInfoStrategy();
             case "com.ihuxu.hestia.server.library.brain.BrainHomeDeviceInfoStrategy":
