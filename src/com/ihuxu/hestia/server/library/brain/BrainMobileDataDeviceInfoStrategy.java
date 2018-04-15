@@ -1,7 +1,7 @@
 package com.ihuxu.hestia.server.library.brain;
 
 import com.ihuxu.hestia.server.library.server.ServerClientThreadManager;
-import com.ihuxu.hestia.server.model.CommonMessageModel;
+import com.ihuxu.hestia.server.model.*;
 
 public class BrainMobileDataDeviceInfoStrategy extends BrainStrategy {
 
