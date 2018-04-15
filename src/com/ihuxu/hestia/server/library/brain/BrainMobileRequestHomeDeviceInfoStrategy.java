@@ -7,8 +7,7 @@ import com.ihuxu.hestia.server.library.instapush.InstapushHandler;
 import com.ihuxu.hestia.server.library.map.MapHandler;
 import com.ihuxu.hestia.server.library.server.ServerClientThread;
 import com.ihuxu.hestia.server.library.server.ServerClientThreadManager;
-import com.ihuxu.hestia.server.model.CommonMessageModel;
-import com.ihuxu.hestia.server.model.LocationMessageModel;
+import com.ihuxu.hestia.server.model.*;
 
 public class BrainMobileRequestHomeDeviceInfoStrategy extends BrainStrategy {
     private MobileRequestHomeDeviceInfoMessageModel lmm;
