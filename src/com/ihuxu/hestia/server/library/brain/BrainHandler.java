@@ -76,6 +76,8 @@ public class BrainHandler extends Thread {
                 return new com.ihuxu.hestia.server.library.brain.BrainLocationStrategy();
             case "com.ihuxu.hestia.server.library.brain.BrainDeviceInfoStrategy":
                 return new com.ihuxu.hestia.server.library.brain.BrainDeviceInfoStrategy();
+            case "com.ihuxu.hestia.server.library.brain.BrainHomeDeviceInfoStrategy":
+                return new com.ihuxu.hestia.server.library.brain.BrainHomeDeviceInfoStrategy();
             default:
                 return null;
         }

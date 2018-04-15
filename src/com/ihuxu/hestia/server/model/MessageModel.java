@@ -18,6 +18,7 @@ public interface MessageModel {
 
     /** FROM RPi **/
     public final int MESSAGE_TYPE_RPI_DATA_DEVICE_INFO = 3000;
+    public final int MESSAGE_TYPE_RPI_DATA_HOME_DEVICE_INFO = 3001;
 
     public int getMessageType();
 

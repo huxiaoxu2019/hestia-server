@@ -12,6 +12,7 @@ public interface CommonConfig {
     public static final String STRATEGY_MAP = "{"
         + "'1000':['com.ihuxu.hestia.server.library.brain.BrainLocationStrategy']"
         + "'3000':['com.ihuxu.hestia.server.library.brain.BrainDeviceInfoStrategy']"
+        + "'3001':['com.ihuxu.hestia.server.library.brain.BrainHomeDeviceInfoStrategy']"
         + "}";
 
     /** INSTAPUSH **/
