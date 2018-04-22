@@ -22,7 +22,16 @@ public class BrainDeviceInfoStrategy extends BrainStrategy {
         this.dimm = new DeviceInfoMessageModel(cmm.getCmd());
 
         // Change Client Key
-        ServerClientThreadManager.changeClientKey(clientId, this.dimm.getClientKey());
+        if (ServerClientThreadManager.changeClientKey(clientId, this.dimm.getClientKey()) == false) {
+            try {
+                // If there is already one the client with the same key,
+                // then return false to disconnect with the client.
+                ServerClientThreadManager.getClientThread(clientId).close();
+                ServerClientThreadManager.removeClientThread(clientId);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

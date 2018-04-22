@@ -39,13 +39,12 @@ public class ServerClientThreadManager {
 
     public static boolean changeClientKey(String originalKey, String newKey) {
         try {
-
+            // If there is already one the client with the same key
+            // then return false to disconnect with the client.
             ServerClientThreadManager.getClientThread(originalKey).setClientKey(originalKey);
             boolean result = ServerClientThreadManager.addClientThread(newKey, ServerClientThreadManager.getClientThread(originalKey));
             if (result == false) {
-                // @TODO while there is the same key to trash, it's one bug, so to wait just for now
-                Thread.sleep(5000);
-                ServerClientThreadManager.addClientThread(newKey, ServerClientThreadManager.getClientThread(originalKey));
+                return false;
             }
             ServerClientThreadManager.removeClientThread(originalKey);
         } catch (Exception e) {
