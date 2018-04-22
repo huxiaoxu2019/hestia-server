@@ -33,3 +33,5 @@ The hestia-server's Brain Part consists of several strategy classes which are in
     when back home, it would turn on the light according to some factors, such the brightness in the room, the switch status of the yeelight
   - LEAVE HOME
     when leave home, it would turn off the light according to some factors, such the brightness in the room, the switch status of the yeelight
+
+[See more at here](https://github.com/GenialX/hestia-server/blob/master/CHANGE_LOG.md)
