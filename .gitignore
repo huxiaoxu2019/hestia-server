@@ -1,5 +1,7 @@
-bin/
-run/*
-src/com/ihuxu/hestia/server/config/*Develop.java
-.classpath
-*.swp
+.idea
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
