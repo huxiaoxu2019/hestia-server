@@ -1,3 +1,4 @@
+# IDE file
 .idea
 
 # Ignore Gradle project-specific cache directory
@@ -5,3 +6,6 @@
 
 # Ignore Gradle build output directory
 build
+
+# Jenv file
+.java-version
