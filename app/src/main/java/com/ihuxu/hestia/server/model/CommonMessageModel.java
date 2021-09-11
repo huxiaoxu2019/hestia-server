@@ -9,7 +9,7 @@ public class CommonMessageModel implements MessageModel {
    * Constructor.
    *
    * @param cmd
-   *     {"errno":0,"errmsg}":"successfully","data":{"message_type":1000,"token":"aaabbbccc"}}
+   *     {"errno":0,"errmsg":"successfully","data":{"message_type":1000,"token":"aaabbbccc"}}
    */
   public CommonMessageModel(String cmd) {
     this.cmd = new JSONObject(cmd);
