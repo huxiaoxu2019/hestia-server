@@ -21,11 +21,19 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
 
     // This dependency is used by the application.
-    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
     implementation 'org.json:json:20210307'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
 }
 
 application {
     // Define the main class for the application.
     mainClass = 'com.ihuxu.hestia.server.controller.BootstrapController'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '7.2'
+}
+
+task prepareKotlinBuildScriptModel {
+
 }
